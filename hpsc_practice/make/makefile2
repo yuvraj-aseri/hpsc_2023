@@ -1,0 +1,8 @@
+op.txt : main.exe
+	./main.ese > op.txt
+
+main.exe : main.o sub1.o sub2.o
+	gfortran main.o sub1.o sub2.o -o main.exe
+
+%.o : %.f90
+	gfortran -c $<

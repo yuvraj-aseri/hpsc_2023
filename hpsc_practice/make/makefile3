@@ -1,0 +1,10 @@
+objects = main.o sub1.o sub2.o
+
+op.txt: main.exe
+	./main.exe > op.txt
+
+main.exe:$(objects)
+	gfortran $(objects) -o main.exe
+
+%.o: %.f90
+	gfortran -c $<
