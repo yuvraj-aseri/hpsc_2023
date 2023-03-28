@@ -1,0 +1,33 @@
+
+Command for hpsc
+
+ping 10.8.1.19
+ssh username@10.8.1.019
+scl --list
+scl enable rh-python36 bash
+pip3 install --user --proxy=http://10.8.0.1:8080 --upgrade pip
+pip3 install --user --proxy=http://10.8.0.1:8080 --upgrade virtualenv
+virtualenv ~/virtualenvs/testenv
+source ~/virtualenvs/testenv/bin/activate
+pip list
+make directories and py files
+
+
+
+scripts
+#!/bin/bash
+#PBS -q serial
+#PBS -o out.o
+#PBS -e out.e
+#PBS -N demo_me_522_pyhton
+#PBS -l nodes=1:ppn=1\
+#PBS -V
+
+
+
+qstat -q
+qsub script_pbs_pyhton.sh
+qstat #it will show the job id
+
+
+
